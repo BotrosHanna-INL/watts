@@ -4,6 +4,8 @@
 import openmc
 import openmc.model
 import numpy as np
+import xml.etree.ElementTree as ET
+
 from utils import create_cells, circle_area, cylinder_radial_shell
 
 def build_openmc_model(params):
@@ -270,10 +272,6 @@ def build_openmc_model(params):
     # Assembly
     pin_pitch = fuel_radii['cladding'] * 2 + params["pin_gap_distance"]
 
-    lattice_radius = pin_pitch * params['assembly_rings']
-
-    lattice_height = 2*lattice_radius
-    
     
     """
     ***************************************************************************************************************************
@@ -282,7 +280,6 @@ def build_openmc_model(params):
     """
     
     
-    DRUM_RADIUS = params['drum_radius_to_lattice_radius'] * lattice_radius  # default value is 0.22784810068
 
     ABSORBER_THICKNESS = params['drum_Absorber_thickness']
 
@@ -291,8 +288,8 @@ def build_openmc_model(params):
 
     rotation_angle = 180
 
-    cd_inner_shell = openmc.ZCylinder(r=DRUM_RADIUS - ABSORBER_THICKNESS)
-    cd_outer_shell = openmc.ZCylinder(r=DRUM_RADIUS)
+    cd_inner_shell = openmc.ZCylinder(r= params['Drum_Radius'] - ABSORBER_THICKNESS)
+    cd_outer_shell = openmc.ZCylinder(r= params['Drum_Radius'])
 
     cutting_plane_1 = openmc.Plane(a=1, b=absorber_arc/2)
     cutting_plane_2 = openmc.Plane(a=1, b=-absorber_arc/2)
@@ -307,7 +304,7 @@ def build_openmc_model(params):
     drum_reference = openmc.Universe(cells=(drum_reflector, drum_absorber, drum_exterior))
 
     drum_cells = []
-    for r in range(0, 360, 60):
+    for r in range(0, 360, params['angle_between_drums_pairs']):
         dc = openmc.Cell(name=f'drum{r}', fill=drum_reference)
         dc.rotation = [0, 0, REFERENCE_ANGLE + r + rotation_angle]
         drum_cells.append(dc)
@@ -317,20 +314,7 @@ def build_openmc_model(params):
     # for d in drums:
     #     d.plot(width=(DRUM_RADIUS*2, DRUM_RADIUS*2), color_by='material', colors=colors)
 
-    drum_height  = params['drum_height_to_lattice_height'] * lattice_height   # since in MARVEL, the control drum height is 1.24* active height
-    tot_drum_vol = 3.14*DRUM_RADIUS * DRUM_RADIUS *drum_height 
-    drum_absorp_vol = (3.14*( DRUM_RADIUS * DRUM_RADIUS - (DRUM_RADIUS-1)*(DRUM_RADIUS-1) )*drum_height)/3
-    drum_refl_vol = tot_drum_vol - drum_absorp_vol 
-
-    tot_drum_vol_all =  tot_drum_vol * 12 
-    tot_drum_area_all =  tot_drum_vol_all /drum_height
-
-    drum_absorp_vol_all = drum_absorp_vol  * 12 
-    drum_refl_vol_all = drum_refl_vol  * 12 
-
-    drum_absorp_all_mass = drum_absorp_vol_all * 2.52/1000 # B4C (in Kg)
-    drum_refl_all_mass = drum_refl_vol_all  * 3.02/1000 # BeO (in Kg)
-    
+  
 
     """
     ***************************************************************************************************************************
@@ -344,28 +328,21 @@ def build_openmc_model(params):
     assembly.center = (0., 0.)
     assembly.pitch = (pin_pitch,)
     assembly.outer = coolant_universe
-    
-    rings = [[moderator_pin, fuel_pin, fuel_pin, fuel_pin, moderator_pin, fuel_pin, fuel_pin, moderator_pin, fuel_pin, fuel_pin, fuel_pin]*6,
-         [fuel_pin, fuel_pin, moderator_pin, fuel_pin, fuel_pin, moderator_pin, fuel_pin, fuel_pin, moderator_pin, fuel_pin]*6,
-         [moderator_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin]*6,
-         [fuel_pin, fuel_pin, moderator_pin, fuel_pin, fuel_pin, fuel_pin, moderator_pin, fuel_pin]*6,
-         [moderator_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin]*6,
-         [fuel_pin, fuel_pin, moderator_pin, fuel_pin, moderator_pin, fuel_pin]*6,
-         [moderator_pin, fuel_pin, fuel_pin, fuel_pin, fuel_pin]*6,
-         [fuel_pin, fuel_pin, moderator_pin, fuel_pin]*6,
-         [moderator_pin, fuel_pin, fuel_pin]*6,
-         [fuel_pin, moderator_pin]*6,
-         [fuel_pin]*6,
-         [moderator_pin]
-         ]
 
+    rings = params['rings']
+
+    for i in range(len(rings)):
+        for j in range(len(rings[i])):
+            if rings[i][j] == 'FUEL':
+                rings[i][j] =fuel_pin
+            elif rings[i][j] == 'MODERATOR':
+                rings[i][j] = moderator_pin
+    
     rings = rings[-params['assembly_rings']:]
     assembly.universes = rings
     
     # Number of fuel elements and moderator elements
     fuel_number = sum(r.count(fuel_pin) for r in rings)
-    moderator_number = sum(r.count(moderator_pin) for r in rings)
-    
     
     """
     ***************************************************************************************************************************
@@ -376,17 +353,17 @@ def build_openmc_model(params):
     
     fissile_area = circle_area(fuel_radii['fuel_meat']) - circle_area(fuel_radii['gap1'])
 
-    fuel.volume = fissile_area * lattice_height * fuel_number
+    fuel.volume = fissile_area *params['lattice_height']  * fuel_number
 
-    heat_transfer_surface = cylinder_radial_shell(fuel_radii['cladding'], lattice_height) * fuel_number  * 1e-4 # convert from cm2 to m2
+    # heat_transfer_surface = cylinder_radial_shell(fuel_radii['cladding'], params['lattice_height'] ) * fuel_number  * 1e-4 # convert from cm2 to m2
 
     power_MW_th = params['power_MW_th']
     power_MW_e = power_MW_th * params['thermal_efficiency']
 
-    print(f'Average heat flux = {np.round(power_MW_th/heat_transfer_surface, 2)} MW/m2')
+    # print(f'Average heat flux = {np.round(power_MW_th/heat_transfer_surface, 2)} MW/m2')
 
-    if (power_MW_th/heat_transfer_surface) > 0.9:
-        print(" \n WARNING : HIGHT HEAT FLUX \n")
+    # if (power_MW_th/heat_transfer_surface) > 0.9:
+    #     print(" \n WARNING : HIGHT HEAT FLUX \n")
 
     materials = openmc.Materials([fuel, ZrH, NaK, Zr, SS304, Be, BeO, B4C_nat])
 
@@ -420,7 +397,7 @@ def build_openmc_model(params):
     deviation = (np.pi/14 )
 
     # i replaced the formula of Rodrigo with another one
-    cd_distance = 0.86602540378 * lattice_radius  + drum_tube_radius 
+    cd_distance = 0.86602540378 * params['lattice_radius']  + drum_tube_radius 
     positions = []
     for s in range(6):
         positions.append(s*sector-deviation)
@@ -447,22 +424,13 @@ def build_openmc_model(params):
     for d in drum_shells[1:]:
         drums_outside = drums_outside & +d
 
-    core_radius = lattice_radius + params['extra_reflector']
 
-    outer_surface = openmc.ZCylinder(r=core_radius, boundary_type='vacuum')
+    outer_surface = openmc.ZCylinder(r=params['core_radius'] , boundary_type='vacuum')
 
     core_cell = openmc.Cell(fill=assembly_universe, region=-outer_surface & drums_outside)
 
     core_geometry = openmc.Geometry([core_cell] + drum_cells)
     core_geometry.export_to_xml()
-
-    # Hexagon area : https://en.wikipedia.org/wiki/Hexagon
-    hex_area = 2.598*lattice_radius*lattice_radius
-    # I assume for now that the drums are always fully inside the reflector
-    area_reflector = (3.14*core_radius*core_radius) - hex_area - tot_drum_area_all # cm2
-    vol_reflector = area_reflector * drum_height # cm^3
-    mass_reflector = vol_reflector * 3.02/1000
-    
     
     """
     ***************************************************************************************************************************
@@ -507,6 +475,11 @@ def build_openmc_model(params):
     tallies.append(equal_lethargy_tally)
 
     tallies.export_to_xml()
+    
+
+    
+    
+ 
         
         
         
