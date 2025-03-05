@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2022-2023 UChicago Argonne, LLC
-# SPDX-License-Identifier: MIT
-
+# Importing libraries
+import numpy as np
 import openmc
 import openmc.model
-import numpy as np
-import xml.etree.ElementTree as ET
+from utils import create_cells, circle_area
 
-from utils import create_cells, circle_area, cylinder_radial_shell
+"""
+An OpenMC function that accepts an instance of "parameters" 
+and generates the necessary XMl files
+"""
 
 def build_openmc_model(params):
     """ OpenMC Model """
@@ -18,9 +19,7 @@ def build_openmc_model(params):
     ***************************************************************************************************************************
     """
     
-    
      # Materials properties
-    common_temperature = params['common_temperature']
 
     ## TRIGA Fuel
 
@@ -52,12 +51,12 @@ def build_openmc_model(params):
         [U_met, ZrH_fuel], [params['U_met_wo'], 1 - params['U_met_wo']], "wo", name="UZrH"
     )
 
-    TRIGA_fuel.temperature = common_temperature
+    TRIGA_fuel.temperature = params['common_temperature']
     TRIGA_fuel.add_s_alpha_beta("c_H_in_ZrH")
 
     # Let's also make a version with 3% Erbium in the meat
 
-    Er = openmc.Material(name="Er", temperature=common_temperature)
+    Er = openmc.Material(name="Er", temperature= params['common_temperature'])
     Er.set_density("g/cm3", 9.2)
     Er.add_element("erbium", 1.0)
 
@@ -67,12 +66,12 @@ def build_openmc_model(params):
         [U_met, Er, ZrH_fuel], [params['U_met_wo'], BA_wo, 1 - params['U_met_wo'] - BA_wo], "wo", name="UZrH-Er"
     )
 
-    TRIGA_fuel_BA.temperature = common_temperature
+    TRIGA_fuel_BA.temperature = params['common_temperature']
     TRIGA_fuel_BA.add_s_alpha_beta("c_H_in_ZrH")
 
 
     ## Moderator pins
-    ZrH = openmc.Material(name="ZrH", temperature=common_temperature)
+    ZrH = openmc.Material(name="ZrH", temperature= params['common_temperature'])
     ZrH.set_density("g/cm3", 5.6)
 
     ZrH.add_nuclide("H1", 1.85)
@@ -80,7 +79,7 @@ def build_openmc_model(params):
     ZrH.add_s_alpha_beta("c_H_in_ZrH")
 
     ## Coolant
-    NaK = openmc.Material(name="NaK", temperature=common_temperature)
+    NaK = openmc.Material(name="NaK", temperature= params['common_temperature'])
     NaK.set_density("g/cm3", 0.75)
     NaK.add_nuclide("Na23", 2.20000e-01)
     NaK.add_nuclide("K39", 7.27413e-01)
@@ -91,18 +90,18 @@ def build_openmc_model(params):
     Be.add_element("beryllium", 1.0)
     Be.add_s_alpha_beta("c_Be")
     Be.set_density("g/cm3", 1.84)
-    Be.temperature = common_temperature
-    BeO = openmc.Material(name="BeO", temperature=common_temperature)
+    Be.temperature =  params['common_temperature']
+    BeO = openmc.Material(name="BeO", temperature= params['common_temperature'])
     BeO.set_density("g/cm3", 3.01)
     BeO.add_element("beryllium", 1.0)
     BeO.add_element("oxygen", 1.0)
     BeO.add_s_alpha_beta("c_Be_in_BeO")
 
     ## Structural materials
-    Zr = openmc.Material(name="Zr", temperature=common_temperature)
+    Zr = openmc.Material(name="Zr", temperature= params['common_temperature'])
     Zr.set_density("g/cm3", 6.49)
     Zr.add_element("zirconium", 1.0)
-    SS304 = openmc.Material(name="SS304", temperature=common_temperature)
+    SS304 = openmc.Material(name="SS304", temperature= params['common_temperature'])
     SS304.set_density("g/cm3", 7.98)
     SS304.add_element("carbon", 0.04)
     SS304.add_element("silicon", 0.50)
@@ -113,7 +112,7 @@ def build_openmc_model(params):
     SS304.add_element("iron", 70.173)
     SS304.add_element("nickel", 9.25)
 
-    SS316 = openmc.Material(name="SS316", temperature=common_temperature)
+    SS316 = openmc.Material(name="SS316", temperature= params['common_temperature'])
     SS316.set_density("g/cm3", 7.98)
     SS316.add_element("carbon", 0.041)
     SS316.add_element("silicon", 0.507)
@@ -127,11 +126,11 @@ def build_openmc_model(params):
     
     
     ## Absorbers
-    B4C_nat = openmc.Material(name="B4C", temperature=common_temperature)
+    B4C_nat = openmc.Material(name="B4C", temperature= params['common_temperature'])
     B4C_nat.add_element("boron", 4)
     B4C_nat.add_element("carbon", 1)
     B4C_nat.set_density("g/cm3", 2.52)
-    B4C_rich = openmc.Material(name="B4C_rich", temperature=common_temperature)
+    B4C_rich = openmc.Material(name="B4C_rich", temperature= params['common_temperature'])
     B4C_rich.add_element("boron", 4, enrichment=50.0, enrichment_target="B10")
     B4C_rich.add_element("carbon", 1)
     B4C_rich.set_density("g/cm3", 2.52)
@@ -145,7 +144,7 @@ def build_openmc_model(params):
         [Zr, Hf], [1 - Hf_impurity, Hf_impurity], "ao", name="ZrHfnat"
     )
 
-    ZrHf_nat.temperature = common_temperature
+    ZrHf_nat.temperature = params['common_temperature']
 
     Gd = openmc.Material(name="Gd")
     Gd.set_density("g/cm3", 7.9)
@@ -156,10 +155,10 @@ def build_openmc_model(params):
     ZrGd = openmc.Material.mix_materials(
         [Zr, Gd], [1 - Gd_addition, Gd_addition], "ao", name="ZrGd"
     )
-    ZrGd.temperature = common_temperature
+    ZrGd.temperature = params['common_temperature']
     # Zirconium Boride absorber coating
 
-    ZrB2 = openmc.Material(name="ZrB2", temperature=common_temperature)
+    ZrB2 = openmc.Material(name="ZrB2", temperature= params['common_temperature'])
     ZrB2.set_density("g/cm3", 6.1)
 
     ZrB2.add_element("zirconium", 1.0)
@@ -168,7 +167,7 @@ def build_openmc_model(params):
 
     # Samarium Oxide Burnable Absorber (NAA-SR-9642, pg. 14)
 
-    Sm2O3 = openmc.Material(name="Sm2O3", temperature=common_temperature)
+    Sm2O3 = openmc.Material(name="Sm2O3", temperature= params['common_temperature'])
     Sm2O3.set_density("g/cm3", 8.35)
 
     Sm2O3.add_element("samarium", 2.0)
@@ -367,7 +366,7 @@ def build_openmc_model(params):
 
     materials = openmc.Materials([fuel, ZrH, NaK, Zr, SS304, Be, BeO, B4C_nat])
 
-    openmc.Materials.cross_sections = "/home/hannbn/projects/MARVEL_MRP/Github_repos/openmc_data/endfb-viii.0-hdf5/cross_sections.xml"
+    openmc.Materials.cross_sections = params['cross_sections_xml_location']
     materials.export_to_xml()
     
     
@@ -386,8 +385,8 @@ def build_openmc_model(params):
     """ 
     
     
-    drum_gap_distance =  DRUM_RADIUS/90 # it was 0.1 and I made it as a ratio
-    drum_tube_radius = DRUM_RADIUS + drum_gap_distance
+    drum_gap_distance =  params['Drum_Radius']/90 # it was 0.1 and I made it as a ratio
+    drum_tube_radius = params['Drum_Radius'] + drum_gap_distance
 
     # Placement of drums happen by tracing a line through the core apothems
     # then 2 drums are place after each apothem by deviating from this line
