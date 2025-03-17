@@ -140,22 +140,26 @@ def collect_materials_data(params):
     # I am not sure if this is necessary but keeping it for now
     materials.export_to_xml()
     
-    return {"Zr": Zr, "TRIGA_fuel": TRIGA_fuel,\
+    materials_database = {"Zr": Zr, "TRIGA_fuel": TRIGA_fuel,\
         "SS304": SS304, "NaK": NaK, "ZrH": ZrH,\
             "Be": Be, "BeO": BeO, "B4C_nat": B4C_nat}
     
+    colors = {materials_database['Zr']: 'green',
+            materials_database['SS304']: 'pink',
+            materials_database['NaK']: 'blue',
+            materials_database['TRIGA_fuel']: 'red',
+            materials_database['ZrH']: 'orange',
+            materials_database['Be']: 'moccasin',
+            materials_database['BeO']: 'seagreen',
+            materials_database['B4C_nat']: 'black'}
+    
+    return materials_database, colors 
     
     
-def color_materials():
-    colors = {'Zr': 'green',
-            'SS304': 'pink',
-            'NaK': 'blue',
-            'TRIGA_fuel': 'red',
-            'ZrH': 'orange',
-            'Be': 'moccasin',
-            'BeO': 'seagreen',
-            'B4C_nat': 'black'}
-    return colors
+    
+# def color_materials(params):
+    
+#     return colors
 
 # def extract_list_lof_materials_properties(params, materials_list):
 #     materials_properties_list = []

@@ -4,7 +4,7 @@ import openmc
 import openmc.model
 from utils import create_cells, create_fuel_pin_regions,\
     create_moderator_pin_regions, create_drums_universe, create_assembly_universe,\
-        create_control_drums_positions, create_core_geometry
+        create_control_drums_positions, create_core_geometry, create_universe_plot
 from openmc_materials_database import collect_materials_data
 
 """
@@ -14,7 +14,7 @@ and generates the necessary XMl files
 
 def build_openmc_model(params):
     
-    materials_database = collect_materials_data(params)
+    materials_database = collect_materials_data(params)[0]
     
     coolant = materials_database[params['coolant']]
     reflector = materials_database[params['reflector']]
@@ -43,6 +43,15 @@ def build_openmc_model(params):
     fuel_cells = create_cells(fuel_pin_region, fuel_materials)
     fuel_pin_universe = openmc.Universe(cells=fuel_cells.values())
 
+    
+        # plotting
+    create_universe_plot(fuel_pin_universe, 
+                    pin_plot_width = 2.2 * params['fuel_pin_radii'][-1],
+                    num_pixels = 500, 
+                    font_size = 16,
+                    title = "Fuel Pin", 
+                    fig_size = 8, 
+                    output_file_name = "fuel_pin.png")
 
     ## Reflector
     moderator_pin_region = create_moderator_pin_regions(params)
@@ -62,6 +71,15 @@ def build_openmc_model(params):
     moderator_cells = create_cells(moderator_pin_region, moderator_materials)
     moderator_pin_universe = openmc.Universe(cells=moderator_cells.values())
 
+        # plotting
+    create_universe_plot(moderator_pin_universe, 
+                    pin_plot_width = 2.2 * params['moderator_pin_radii'][-1],
+                    num_pixels = 500, 
+                    font_size = 16,
+                    title = "Moderator Pin", 
+                    fig_size = 8, 
+                    output_file_name = "moderator_pin.png")
+    
     coolant_cell = openmc.Cell(fill=coolant)
     coolant_universe = openmc.Universe(cells=(coolant_cell,))
     
@@ -74,6 +92,15 @@ def build_openmc_model(params):
                           control_drum_reflector_material = materials_database[params['reflector']] ,
                           angle_between_drums_pairs = params['angle_between_drums_pairs'])
 
+    for ii in range (len(drums)):
+        the_drum = drums[ii]
+        create_universe_plot(the_drum, 
+                pin_plot_width = 2.2 * params['Drum_Radius'],
+                num_pixels = 500, 
+                font_size = 16,
+                title = "Control Drum", 
+                fig_size = 8, 
+                output_file_name = f"control_drum{ii}.png")
     # **************************************************************************************************************************
     #                                                Sec. 4 : ASSEMBLY & RINGS
     # **************************************************************************************************************************
@@ -102,6 +129,7 @@ def build_openmc_model(params):
     # **************************************************************************************************************************
     #                                                Sec. 6 : CORE DRUM REPLACEMENT
     # **************************************************************************************************************************
+    
     control_drum_positions = create_control_drums_positions(params,
                                                             number_of_drums = len(drums))
 
@@ -112,6 +140,12 @@ def build_openmc_model(params):
 
 
     core_geometry.export_to_xml()
+    # Plotting
+    plot = openmc.Plot.from_geometry(core_geometry)
+    plot.pixels = (2000, 2000)
+    plot.filename = 'lattice_plot'
+  
+    plot.to_ipython_image()
     
     # **************************************************************************************************************************
     #                                                Sec. 7 : SIMULATION

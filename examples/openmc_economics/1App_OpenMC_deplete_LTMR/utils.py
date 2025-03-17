@@ -206,4 +206,24 @@ def create_core_geometry(params, drums, drums_positions, assembly_universe ):
     core_cell = openmc.Cell(fill= assembly_universe, region=-outer_surface & drums_outside)
 
     core_geometry = openmc.Geometry([core_cell] + drum_cells)  
-    return core_geometry   
+    return core_geometry 
+
+
+def create_universe_plot(pin_universe, pin_plot_width, num_pixels, font_size,\
+    title, fig_size, output_file_name):
+    
+    pin_plot = pin_universe.plot(width = ( pin_plot_width, pin_plot_width),
+                                 pixels=(num_pixels, num_pixels))
+    pin_plot.set_xlabel('x [cm]', fontsize= font_size)
+    pin_plot.set_ylabel('y [xm]', fontsize= font_size)
+    pin_plot.set_title(title, fontsize= font_size)
+
+    pin_plot.tick_params(axis='x', labelsize= font_size)
+    pin_plot.tick_params(axis='y', labelsize= font_size)
+    
+    # Retrieve the figure from the Axes object
+    fig = pin_plot.figure
+    fig.set_size_inches(fig_size, fig_size) 
+    fig.tight_layout()
+    # Save the figure to a file
+    fig.savefig(output_file_name)  

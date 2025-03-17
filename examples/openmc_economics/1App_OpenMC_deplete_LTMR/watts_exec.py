@@ -120,5 +120,6 @@ if params['heat_flux'] <= params['heat_flux_criteria']:
     elapsed_time = (time.time() - time_start)/60
     print('Execution time:', np.round(elapsed_time, 1), 'minutes')
 
-elif params['heat_flux'] > 0.9:
+elif params['heat_flux'] > params['heat_flux_criteria']:
     print(f"\033[91mHIGH HEAT FLUX: {params['heat_flux']} MW/m^2.\033[0m")
+    
