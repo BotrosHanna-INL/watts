@@ -157,17 +157,29 @@ def color_materials():
             'B4C_nat': 'black'}
     return colors
 
-def extract_list_lof_materials_properties(params, materials_list):
-    material_properties = collect_materials_data(params)
-    materials_properties_list = []
-    # the input is a list like ("Zr", "SS")
-    for item in materials_list:
-        if item == None:
-            materials_properties_list.append(None)
-        else:    
+# def extract_list_lof_materials_properties(params, materials_list):
+#     materials_properties_list = []
+#     # the input is a list like ("Zr", "SS")
+#     for item in materials_list:
+#         if item == None:
+#             materials_properties_list.append(None)
+#         else:    
             
-            material_properties = (collect_materials_data(params))[item]
-            materials_properties_list.append(material_properties)
+#             material_properties = (collect_materials_data(params))[item]
+#             materials_properties_list.append(material_properties)
         
-    return materials_properties_list 
+#     return materials_properties_list 
     
+# def extract_list_lof_materials_properties(params, materials_list):
+#     materials_database = collect_materials_data(params)
+#     materials_properties_list = []
+    
+#     for mat in materials_list:
+#         # print(mat)
+#         if mat == None:
+#             materials_properties_list.append(None)
+        
+#         else: 
+#             material_1 = materials_database[mat]
+#             materials_properties_list.append(material_1)
+#     return materials_properties_list        

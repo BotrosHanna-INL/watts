@@ -40,8 +40,11 @@ params['cross_sections_xml_location'] = '/home/hannbn/projects/MARVEL_MRP/Github
 params['common_temperature'] = 600  # Temperature of the material in Kelvin
 params['enrichment'] = 0.1975 # The Uranium enrichment (wt%). Its range is 0 to 1
 params['fuel_pin_radii'] = [0.28575, 0.3175, 1.5113, 1.5367, 1.5875]
-params['moderator_pin_radii'] = [params['fuel_pin_radii'][3], params['fuel_pin_radii'][4]]
+params['fuel_pin_materials'] = ['Zr', None,'TRIGA_fuel', None, 'SS304' ]
 
+params['moderator_pin_radii'] = [params['fuel_pin_radii'][3], params['fuel_pin_radii'][4]]
+params['moderator_pin_materials'] = ['ZrH' , 'SS304']
+params["deviation angle between drums"] = (np.pi/14 )
 params['fuel'] = 'TRIGA_fuel'
 
 params['fuel_pin_filler_rod'] = 'Zr'
@@ -78,6 +81,11 @@ params['Drum_Radius'] = params['drum_radius_to_lattice_radius'] * params['lattic
 params['drum_height_to_lattice_height'] = 1.24
 params['drum_height'] = params['drum_height_to_lattice_height'] * params['lattice_height']   # since in MARVEL, the control drum height is 1.24* active height
 params['angle_between_drums_pairs'] = 60
+params['drum_gap_distance'] = params['Drum_Radius']/90
+
+params['drum_tube_radius'] = params['Drum_Radius'] + params['drum_gap_distance'] 
+params['distance between control drums'] = 0.86602540378 * params['lattice_radius']  + params['drum_tube_radius']
+
 
 params['all_drums_volume'], params['drum_absorp_all_mass'] , params['drum_refl_all_mass'] = \
     calculate_drum_volume(params['Drum_Radius'], params['drum_height'], params['drum_Absorber_thickness'] , params['angle_between_drums_pairs'])

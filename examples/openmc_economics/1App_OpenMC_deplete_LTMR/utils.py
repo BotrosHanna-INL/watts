@@ -92,3 +92,118 @@ def create_moderator_pin_regions(params):
             'coolant': +shells[1]
     }
     return region
+
+
+
+def create_drums_universe(absorber_thickness, drum_radius,
+                          control_drum_absorber_material,
+                          control_drum_reflector_material,
+                          angle_between_drums_pairs):
+
+    absorber_arc = np.pi/3
+    REFERENCE_ANGLE = 0
+    rotation_angle = 180
+
+    cd_inner_shell = openmc.ZCylinder(r= drum_radius - absorber_thickness)
+    cd_outer_shell = openmc.ZCylinder(r= drum_radius)
+
+    cutting_plane_1 = openmc.Plane(a=1, b=absorber_arc/2)
+    cutting_plane_2 = openmc.Plane(a=1, b=-absorber_arc/2)
+
+    drum_absorber = +cd_inner_shell & -cd_outer_shell & -cutting_plane_1 & -cutting_plane_2
+    drum_reflector = -cd_outer_shell & ~drum_absorber
+    drum_outside = +cd_outer_shell
+    drum_absorber = openmc.Cell(name='drum_absorber', fill= control_drum_absorber_material, region=drum_absorber)
+    drum_reflector = openmc.Cell(name='drum_reflector', fill= control_drum_reflector_material, region=drum_reflector)
+    drum_exterior = openmc.Cell(name='drum_outside', region=drum_outside)
+
+    drum_reference = openmc.Universe(cells=(drum_reflector, drum_absorber, drum_exterior))
+    
+    drum_cells = []
+    for r in range(0, 360, angle_between_drums_pairs):
+        dc = openmc.Cell(name=f'drum{r}', fill=drum_reference)
+        dc.rotation = [0, 0, REFERENCE_ANGLE + r + rotation_angle]
+        drum_cells.append(dc)
+
+    drums = [openmc.Universe(cells=(dc,)) for dc in drum_cells]    
+    return drums
+
+
+
+def create_assembly_universe(params, fuel_pin_universe, moderator_pin_universe, pin_pitch, reflector_material, outer_universe):
+
+    assembly = openmc.HexLattice()
+
+    assembly.center = (0., 0.)
+    assembly.pitch = (pin_pitch,)
+    assembly.outer = outer_universe # coolant universe is the outer universe probably
+    rings = params['rings']
+ 
+    for i in range(len(rings)):
+        for j in range(len(rings[i])):
+            if rings[i][j] == 'FUEL':
+                rings[i][j] = fuel_pin_universe
+            elif rings[i][j] == 'MODERATOR':
+                rings[i][j] = moderator_pin_universe
+    
+    rings = rings[-params['assembly_rings']:]
+    assembly.universes = rings
+    
+    assembly_boundary = openmc.model.hexagonal_prism(edge_length=\
+        pin_pitch*(params['assembly_rings']-1)+pin_pitch*0.6, corner_radius = (params['fuel_pin_radii'])[-1] \
+            + params["pin_gap_distance"])
+
+    fuel_assembly_cell = openmc.Cell(fill=assembly, region=assembly_boundary)
+    reflector_cell = openmc.Cell(fill = reflector_material, region=~assembly_boundary)
+
+    assembly_universe = openmc.Universe(cells=[fuel_assembly_cell, reflector_cell])
+    return assembly_universe
+
+
+
+def create_control_drums_positions( params, number_of_drums):
+        
+    # Placement of drums happen by tracing a line through the core apothems
+    # then 2 drums are place after each apothem by deviating from this line
+    # by a deviation angle
+    sector = (params['angle_between_drums_pairs']/180) * np.pi
+    
+    deviation = params["deviation angle between drums"]  
+    positions = []
+    for s in range(number_of_drums):
+        positions.append(s*sector-deviation)
+        positions.append(s*sector+deviation)
+    return positions 
+
+
+
+
+
+def create_core_geometry(params, drums, drums_positions, assembly_universe ):
+    cd_distance = params['distance between control drums']
+    drum_tube_radius = params['drum_tube_radius']
+    drum_universes = []
+    for d in drums:
+        drum_universes.append(d)
+        drum_universes.append(d)
+
+    drum_shells = []
+    drum_cells = []
+    for p, du in zip(drums_positions, drum_universes):
+        x, y = np.cos(p)*cd_distance, np.sin(p)*cd_distance
+        drum_shell = openmc.ZCylinder(x0=x, y0=y, r=drum_tube_radius)
+        drum_shells.append(drum_shell)
+        drum_cell = openmc.Cell(fill=du, region=-drum_shell)
+        drum_cell.translation = (x, y, 0)  # translates the center of the drum universe to match the cylinder position
+        drum_cells.append(drum_cell)
+    
+    drums_outside = +drum_shells[0]
+    for d in drum_shells[1:]:
+        drums_outside = drums_outside & +d
+
+    outer_surface = openmc.ZCylinder(r=params['core_radius'] , boundary_type='vacuum')
+
+    core_cell = openmc.Cell(fill= assembly_universe, region=-outer_surface & drums_outside)
+
+    core_geometry = openmc.Geometry([core_cell] + drum_cells)  
+    return core_geometry   
