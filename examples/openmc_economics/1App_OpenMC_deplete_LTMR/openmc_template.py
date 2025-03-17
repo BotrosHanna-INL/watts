@@ -15,11 +15,8 @@ and generates the necessary XMl files
 def build_openmc_model(params):
     
     materials_database = collect_materials_data(params)
-    fuel = materials_database [params['fuel']]
-    fuel_pin_filler_rod = materials_database[params['fuel_pin_filler_rod']]
-    cladding = materials_database[params['cladding']]
+    
     coolant = materials_database[params['coolant']]
-    moderator = materials_database[params['moderator_pin']] 
     reflector = materials_database[params['reflector']]
     control_drum_absorber = materials_database[params['control_drum_absorber']]
     control_drum_reflector = materials_database[params['control_drum_reflector']]
@@ -92,8 +89,12 @@ def build_openmc_model(params):
     # **************************************************************************************************************************
     #                                                Sec. 5 : VOLUME INFO for Depletion
     # **************************************************************************************************************************
-    materials = openmc.Materials([fuel, moderator, coolant, fuel_pin_filler_rod,\
-        cladding, control_drum_reflector, reflector, control_drum_absorber])
+    all_materials = fuel_materials +\
+        moderator_materials + [coolant, reflector, control_drum_absorber, control_drum_reflector]
+    
+    # removing "None" materials
+    all_materials_cleaned_list = [item for item in all_materials if item is not None]
+    materials = openmc.Materials(list(set(all_materials_cleaned_list)))
    
     openmc.Materials.cross_sections = params['cross_sections_xml_location']
     materials.export_to_xml()
