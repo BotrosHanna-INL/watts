@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics/1App_OpenMC_deplete_LTMR/watts_exec.py", line 233, in <module>
+    run_openmc(params)
+  File "/home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics/1App_OpenMC_deplete_LTMR/watts_exec.py", line 223, in run_openmc
+    openmc_result = openmc_plugin(params, function=run_func)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hannbn/.conda/envs/openmc-env/envs/watts_openmc/lib/python3.12/site-packages/watts/plugin.py", line 122, in __call__
+    self.run(**kwargs)
+  File "/home/hannbn/.conda/envs/openmc-env/envs/watts_openmc/lib/python3.12/site-packages/watts/plugin_openmc.py", line 128, in run
+    function(**kwargs)
+  File "/home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics/1App_OpenMC_deplete_LTMR/watts_exec.py", line 214, in run_func
+    openmc.run()
+  File "/home/hannbn/.conda/envs/openmc-env/envs/watts_openmc/lib/python3.12/site-packages/openmc/executor.py", line 314, in run
+    _run(args, output, cwd)
+  File "/home/hannbn/.conda/envs/openmc-env/envs/watts_openmc/lib/python3.12/site-packages/openmc/executor.py", line 125, in _run
+    raise RuntimeError(error_msg)
+RuntimeError: No cross_sections.xml file was specified in materials.xml or in the OPENMC_CROSS_SECTIONS environment variable. OpenMC needs such a file to identify where to find data libraries. Please consult the user's guide at https://docs.openmc.org/ for information on how to set up data libraries. -------------------------------------------------------------------------- MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD Proc: [[31595,0],0] Errorcode: -1 NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes. You may or may not see output from other processes, depending on exactly when Open MPI kills them. --------------------------------------------------------------------------

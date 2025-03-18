@@ -226,4 +226,38 @@ def create_universe_plot(pin_universe, pin_plot_width, num_pixels, font_size,\
     fig.set_size_inches(fig_size, fig_size) 
     fig.tight_layout()
     # Save the figure to a file
-    fig.savefig(output_file_name)  
+    fig.savefig(output_file_name) 
+    
+def openmc_depletion(params, lattice_geometry, settings):
+    
+    openmc.config['cross_sections'] = params['cross_sections_xml_location'] 
+    
+    # depletion operator, performing transport simulations, is created using the geometry and settings xml files
+    operator = openmc.deplete.CoupledOperator(openmc.Model(geometry=lattice_geometry, 
+            settings=settings),
+            chain_file= params['simplified_chain_thermal_xml'])
+    burnup_steps_list_MWd_per_Kg = params['burnup_steps_MWd_per_Kg']
+    
+    #MWd/kg (MW-day of energy deposited per kilogram of initial heavy metal)
+    burnup_step = np.array(burnup_steps_list_MWd_per_Kg)     #np.array([0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 15.0, 20.0, 30.0, 40.0, 50.0, 60.0, 80.0, 100.0, 120.0, 140.0]) 
+    burnup = np.diff (burnup_step, prepend =0.0 )
+    
+    # Deplete using a first-order predictor algorithm.
+    integrator = openmc.deplete.PredictorIntegrator(operator, burnup,
+                                                    1000000 * params['power_MW_th'], timestep_units='MWd/kg')
+    integrator.integrate()
+    results = openmc.deplete.Results("./depletion_results.h5")
+    time, k = results.get_keff()
+
+    time /= (24 * 60 * 60)  # convert back to days from second
+    for j, ki in enumerate(k):
+        if ki[0] < 1.0:
+            i = j-1
+            break
+    fuel_lifetime_days = (time[i])   
+    orig_material = results.export_to_materials(0)
+
+    mass_U235 = orig_material[0].get_mass('U235')
+    mass_U238 = orig_material[0].get_mass('U238')
+    return fuel_lifetime_days, mass_U235, mass_U238     
+     
