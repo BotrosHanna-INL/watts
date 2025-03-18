@@ -1,8 +1,8 @@
 # Importing libraries
 import openmc
 import openmc.model
-from utils import *
-from openmc_materials_database import collect_materials_data
+from core_design.utils import *
+from core_design.openmc_materials_database import collect_materials_data
 
 """
 An OpenMC function that accepts an instance of "parameters" 

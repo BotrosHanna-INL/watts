@@ -259,5 +259,4 @@ def openmc_depletion(params, lattice_geometry, settings):
 
     mass_U235 = orig_material[0].get_mass('U235')
     mass_U238 = orig_material[0].get_mass('U238')
-    return fuel_lifetime_days, mass_U235, mass_U238     
-     
+    return fuel_lifetime_days, mass_U235, mass_U238
