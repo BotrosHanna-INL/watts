@@ -10,7 +10,7 @@
 #PBS -m be
 #PBS -M botros.hanna@inl.gov
 
-cd /home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics/1App_OpenMC_deplete_LTMR
+cd /home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 source activate /home/hannbn/.conda/envs/openmc-env/envs/watts_openmc

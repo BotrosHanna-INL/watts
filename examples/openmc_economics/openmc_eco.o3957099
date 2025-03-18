@@ -1,0 +1,2 @@
+/var/spool/pbs/mom_priv/jobs/3957099.sawtoothpbs.SC: line 13: cd: /home/hannbn/projects/MARVEL_MRP/Github_repos/watts/examples/openmc_economics/1App_OpenMC_deplete_LTMR: No such file or directory
+python: can't open file '/home/hannbn/watts_exec.py': [Errno 2] No such file or directory
