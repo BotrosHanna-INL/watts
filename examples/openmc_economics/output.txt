@@ -27,7 +27,7 @@
          License | https://docs.openmc.org/en/latest/license.html
          Version | 0.15.0
         Git SHA1 | 84fb85977f46e162fea8f5a20ea653a3ec62ac24
-       Date/Time | 2025-03-18 04:36:41
+       Date/Time | 2025-04-03 07:14:16
    MPI Processes | 1
   OpenMP Threads | 16
 
@@ -853,21 +853,21 @@
 
  =======================>     TIMING STATISTICS     <=======================
 
- Total time for initialization     = 7.1747e+00 seconds
-   Reading cross sections          = 6.9665e+00 seconds
- Total time in simulation          = 2.9039e+00 seconds
-   Time in transport only          = 2.8924e+00 seconds
-   Time in inactive batches        = 1.9824e-01 seconds
-   Time in active batches          = 2.7057e+00 seconds
-   Time synchronizing fission bank = 3.0786e-03 seconds
-     Sampling source sites         = 2.5017e-03 seconds
-     SEND/RECV source sites        = 3.8594e-04 seconds
-   Time accumulating tallies       = 1.1433e-03 seconds
-   Time writing statepoints        = 5.0063e-03 seconds
- Total time for finalization       = 3.5514e-05 seconds
- Total time elapsed                = 1.0504e+01 seconds
- Calculation Rate (inactive)       = 100887 particles/second
- Calculation Rate (active)         = 7391.87 particles/second
+ Total time for initialization     = 6.7199e+00 seconds
+   Reading cross sections          = 6.5172e+00 seconds
+ Total time in simulation          = 4.5465e+00 seconds
+   Time in transport only          = 4.5160e+00 seconds
+   Time in inactive batches        = 2.1557e-01 seconds
+   Time in active batches          = 4.3309e+00 seconds
+   Time synchronizing fission bank = 3.2797e-03 seconds
+     Sampling source sites         = 2.5372e-03 seconds
+     SEND/RECV source sites        = 5.2788e-04 seconds
+   Time accumulating tallies       = 1.9422e-02 seconds
+   Time writing statepoints        = 5.0334e-03 seconds
+ Total time for finalization       = 4.2001e-05 seconds
+ Total time elapsed                = 1.1693e+01 seconds
+ Calculation Rate (inactive)       = 92776.9 particles/second
+ Calculation Rate (active)         = 4618 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -991,19 +991,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9602e+00 seconds
-   Time in transport only          = 3.9413e+00 seconds
-   Time in inactive batches        = 1.3575e+00 seconds
-   Time in active batches          = 2.6028e+00 seconds
-   Time synchronizing fission bank = 3.3233e-03 seconds
-     Sampling source sites         = 2.7129e-03 seconds
-     SEND/RECV source sites        = 3.8626e-04 seconds
-   Time accumulating tallies       = 9.6686e-03 seconds
-   Time writing statepoints        = 3.1543e-03 seconds
- Total time for finalization       = 3.3451e-05 seconds
- Total time elapsed                = 4.3759e+00 seconds
- Calculation Rate (inactive)       = 14733.1 particles/second
- Calculation Rate (active)         = 7684.16 particles/second
+ Total time in simulation          = 4.3500e+00 seconds
+   Time in transport only          = 4.3379e+00 seconds
+   Time in inactive batches        = 1.3858e+00 seconds
+   Time in active batches          = 2.9642e+00 seconds
+   Time synchronizing fission bank = 3.6795e-03 seconds
+     Sampling source sites         = 2.7096e-03 seconds
+     SEND/RECV source sites        = 7.1904e-04 seconds
+   Time accumulating tallies       = 1.3555e-03 seconds
+   Time writing statepoints        = 3.2731e-03 seconds
+ Total time for finalization       = 3.6173e-05 seconds
+ Total time elapsed                = 4.7696e+00 seconds
+ Calculation Rate (inactive)       = 14431.9 particles/second
+ Calculation Rate (active)         = 6747.2 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1127,19 +1127,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9909e+00 seconds
-   Time in transport only          = 3.9786e+00 seconds
-   Time in inactive batches        = 1.3602e+00 seconds
-   Time in active batches          = 2.6307e+00 seconds
-   Time synchronizing fission bank = 3.5088e-03 seconds
-     Sampling source sites         = 2.9285e-03 seconds
-     SEND/RECV source sites        = 3.6328e-04 seconds
-   Time accumulating tallies       = 1.3827e-03 seconds
-   Time writing statepoints        = 4.5843e-03 seconds
- Total time for finalization       = 3.3691e-05 seconds
- Total time elapsed                = 4.4067e+00 seconds
- Calculation Rate (inactive)       = 14703.8 particles/second
- Calculation Rate (active)         = 7602.45 particles/second
+ Total time in simulation          = 4.4301e+00 seconds
+   Time in transport only          = 4.4160e+00 seconds
+   Time in inactive batches        = 1.4025e+00 seconds
+   Time in active batches          = 3.0276e+00 seconds
+   Time synchronizing fission bank = 3.7067e-03 seconds
+     Sampling source sites         = 2.7776e-03 seconds
+     SEND/RECV source sites        = 6.6500e-04 seconds
+   Time accumulating tallies       = 1.2821e-03 seconds
+   Time writing statepoints        = 5.0767e-03 seconds
+ Total time for finalization       = 3.8646e-05 seconds
+ Total time elapsed                = 4.8459e+00 seconds
+ Calculation Rate (inactive)       = 14260.3 particles/second
+ Calculation Rate (active)         = 6605.96 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1263,19 +1263,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9337e+00 seconds
-   Time in transport only          = 3.9206e+00 seconds
-   Time in inactive batches        = 1.3748e+00 seconds
-   Time in active batches          = 2.5589e+00 seconds
-   Time synchronizing fission bank = 3.4522e-03 seconds
-     Sampling source sites         = 2.8658e-03 seconds
-     SEND/RECV source sites        = 3.7400e-04 seconds
-   Time accumulating tallies       = 1.4556e-03 seconds
-   Time writing statepoints        = 5.1769e-03 seconds
- Total time for finalization       = 3.6576e-05 seconds
- Total time elapsed                = 4.3498e+00 seconds
- Calculation Rate (inactive)       = 14547.7 particles/second
- Calculation Rate (active)         = 7815.92 particles/second
+ Total time in simulation          = 4.3598e+00 seconds
+   Time in transport only          = 4.3457e+00 seconds
+   Time in inactive batches        = 1.3963e+00 seconds
+   Time in active batches          = 2.9635e+00 seconds
+   Time synchronizing fission bank = 3.9257e-03 seconds
+     Sampling source sites         = 2.8728e-03 seconds
+     SEND/RECV source sites        = 7.3224e-04 seconds
+   Time accumulating tallies       = 1.1473e-03 seconds
+   Time writing statepoints        = 5.0455e-03 seconds
+ Total time for finalization       = 3.4659e-05 seconds
+ Total time elapsed                = 4.7755e+00 seconds
+ Calculation Rate (inactive)       = 14324 particles/second
+ Calculation Rate (active)         = 6748.77 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1399,19 +1399,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9669e+00 seconds
-   Time in transport only          = 3.9360e+00 seconds
-   Time in inactive batches        = 1.3546e+00 seconds
-   Time in active batches          = 2.6123e+00 seconds
-   Time synchronizing fission bank = 3.3313e-03 seconds
-     Sampling source sites         = 2.6681e-03 seconds
-     SEND/RECV source sites        = 4.5112e-04 seconds
-   Time accumulating tallies       = 1.9436e-02 seconds
-   Time writing statepoints        = 4.5649e-03 seconds
- Total time for finalization       = 3.5027e-05 seconds
- Total time elapsed                = 4.3830e+00 seconds
- Calculation Rate (inactive)       = 14764 particles/second
- Calculation Rate (active)         = 7656.1 particles/second
+ Total time in simulation          = 4.4476e+00 seconds
+   Time in transport only          = 4.4323e+00 seconds
+   Time in inactive batches        = 1.3989e+00 seconds
+   Time in active batches          = 3.0487e+00 seconds
+   Time synchronizing fission bank = 4.5936e-03 seconds
+     Sampling source sites         = 3.1478e-03 seconds
+     SEND/RECV source sites        = 9.8972e-04 seconds
+   Time accumulating tallies       = 8.0202e-04 seconds
+   Time writing statepoints        = 5.6254e-03 seconds
+ Total time for finalization       = 3.3361e-05 seconds
+ Total time elapsed                = 4.8725e+00 seconds
+ Calculation Rate (inactive)       = 14296.9 particles/second
+ Calculation Rate (active)         = 6560.15 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1535,19 +1535,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9725e+00 seconds
-   Time in transport only          = 3.9586e+00 seconds
-   Time in inactive batches        = 1.3779e+00 seconds
-   Time in active batches          = 2.5946e+00 seconds
-   Time synchronizing fission bank = 3.3149e-03 seconds
-     Sampling source sites         = 2.7254e-03 seconds
-     SEND/RECV source sites        = 3.9297e-04 seconds
-   Time accumulating tallies       = 1.5029e-03 seconds
-   Time writing statepoints        = 4.9509e-03 seconds
- Total time for finalization       = 4.2792e-05 seconds
- Total time elapsed                = 4.3884e+00 seconds
- Calculation Rate (inactive)       = 14514.4 particles/second
- Calculation Rate (active)         = 7708.31 particles/second
+ Total time in simulation          = 4.3832e+00 seconds
+   Time in transport only          = 4.3692e+00 seconds
+   Time in inactive batches        = 1.3977e+00 seconds
+   Time in active batches          = 2.9854e+00 seconds
+   Time synchronizing fission bank = 3.8100e-03 seconds
+     Sampling source sites         = 2.7722e-03 seconds
+     SEND/RECV source sites        = 7.2740e-04 seconds
+   Time accumulating tallies       = 1.2798e-03 seconds
+   Time writing statepoints        = 4.6332e-03 seconds
+ Total time for finalization       = 3.5258e-05 seconds
+ Total time elapsed                = 4.8030e+00 seconds
+ Calculation Rate (inactive)       = 14308.8 particles/second
+ Calculation Rate (active)         = 6699.22 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1671,19 +1671,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9663e+00 seconds
-   Time in transport only          = 3.9296e+00 seconds
-   Time in inactive batches        = 1.3552e+00 seconds
-   Time in active batches          = 2.6110e+00 seconds
-   Time synchronizing fission bank = 3.3990e-03 seconds
-     Sampling source sites         = 2.8207e-03 seconds
-     SEND/RECV source sites        = 3.8865e-04 seconds
-   Time accumulating tallies       = 2.5477e-02 seconds
-   Time writing statepoints        = 4.9668e-03 seconds
- Total time for finalization       = 3.6437e-05 seconds
- Total time elapsed                = 4.3822e+00 seconds
- Calculation Rate (inactive)       = 14757.4 particles/second
- Calculation Rate (active)         = 7659.8 particles/second
+ Total time in simulation          = 4.4268e+00 seconds
+   Time in transport only          = 4.3986e+00 seconds
+   Time in inactive batches        = 1.3892e+00 seconds
+   Time in active batches          = 3.0376e+00 seconds
+   Time synchronizing fission bank = 4.4847e-03 seconds
+     Sampling source sites         = 3.0798e-03 seconds
+     SEND/RECV source sites        = 9.9431e-04 seconds
+   Time accumulating tallies       = 1.4068e-02 seconds
+   Time writing statepoints        = 5.2167e-03 seconds
+ Total time for finalization       = 3.5105e-05 seconds
+ Total time elapsed                = 4.8483e+00 seconds
+ Calculation Rate (inactive)       = 14396.7 particles/second
+ Calculation Rate (active)         = 6584.14 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1807,19 +1807,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9652e+00 seconds
-   Time in transport only          = 3.9527e+00 seconds
-   Time in inactive batches        = 1.3612e+00 seconds
-   Time in active batches          = 2.6039e+00 seconds
-   Time synchronizing fission bank = 3.4964e-03 seconds
-     Sampling source sites         = 2.8218e-03 seconds
-     SEND/RECV source sites        = 4.3686e-04 seconds
-   Time accumulating tallies       = 1.5159e-03 seconds
-   Time writing statepoints        = 4.4929e-03 seconds
- Total time for finalization       = 3.7511e-05 seconds
- Total time elapsed                = 4.3814e+00 seconds
- Calculation Rate (inactive)       = 14692.6 particles/second
- Calculation Rate (active)         = 7680.7 particles/second
+ Total time in simulation          = 4.4002e+00 seconds
+   Time in transport only          = 4.3849e+00 seconds
+   Time in inactive batches        = 1.4020e+00 seconds
+   Time in active batches          = 2.9982e+00 seconds
+   Time synchronizing fission bank = 3.8929e-03 seconds
+     Sampling source sites         = 2.8214e-03 seconds
+     SEND/RECV source sites        = 7.1383e-04 seconds
+   Time accumulating tallies       = 9.1381e-04 seconds
+   Time writing statepoints        = 5.8271e-03 seconds
+ Total time for finalization       = 3.4709e-05 seconds
+ Total time elapsed                = 4.8203e+00 seconds
+ Calculation Rate (inactive)       = 14265.6 particles/second
+ Calculation Rate (active)         = 6670.64 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -1943,19 +1943,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9943e+00 seconds
-   Time in transport only          = 3.9810e+00 seconds
-   Time in inactive batches        = 1.3921e+00 seconds
-   Time in active batches          = 2.6022e+00 seconds
-   Time synchronizing fission bank = 3.4718e-03 seconds
-     Sampling source sites         = 2.8757e-03 seconds
-     SEND/RECV source sites        = 3.7219e-04 seconds
-   Time accumulating tallies       = 1.4765e-03 seconds
-   Time writing statepoints        = 5.2736e-03 seconds
- Total time for finalization       = 3.5160e-05 seconds
- Total time elapsed                = 4.4104e+00 seconds
- Calculation Rate (inactive)       = 14367 particles/second
- Calculation Rate (active)         = 7685.72 particles/second
+ Total time in simulation          = 4.4644e+00 seconds
+   Time in transport only          = 4.4499e+00 seconds
+   Time in inactive batches        = 1.4243e+00 seconds
+   Time in active batches          = 3.0401e+00 seconds
+   Time synchronizing fission bank = 4.2058e-03 seconds
+     Sampling source sites         = 3.2182e-03 seconds
+     SEND/RECV source sites        = 6.8997e-04 seconds
+   Time accumulating tallies       = 1.4314e-03 seconds
+   Time writing statepoints        = 4.6264e-03 seconds
+ Total time for finalization       = 3.5009e-05 seconds
+ Total time elapsed                = 4.8801e+00 seconds
+ Calculation Rate (inactive)       = 14042.3 particles/second
+ Calculation Rate (active)         = 6578.68 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2079,19 +2079,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9969e+00 seconds
-   Time in transport only          = 3.9845e+00 seconds
-   Time in inactive batches        = 1.3684e+00 seconds
-   Time in active batches          = 2.6284e+00 seconds
-   Time synchronizing fission bank = 3.5151e-03 seconds
-     Sampling source sites         = 2.8654e-03 seconds
-     SEND/RECV source sites        = 4.5245e-04 seconds
-   Time accumulating tallies       = 1.2470e-03 seconds
-   Time writing statepoints        = 4.5904e-03 seconds
- Total time for finalization       = 3.5603e-05 seconds
- Total time elapsed                = 4.4127e+00 seconds
- Calculation Rate (inactive)       = 14615.4 particles/second
- Calculation Rate (active)         = 7609.06 particles/second
+ Total time in simulation          = 4.3890e+00 seconds
+   Time in transport only          = 4.3746e+00 seconds
+   Time in inactive batches        = 1.3955e+00 seconds
+   Time in active batches          = 2.9935e+00 seconds
+   Time synchronizing fission bank = 3.8170e-03 seconds
+     Sampling source sites         = 2.8540e-03 seconds
+     SEND/RECV source sites        = 6.7653e-04 seconds
+   Time accumulating tallies       = 1.3848e-03 seconds
+   Time writing statepoints        = 5.2273e-03 seconds
+ Total time for finalization       = 3.4695e-05 seconds
+ Total time elapsed                = 4.8045e+00 seconds
+ Calculation Rate (inactive)       = 14331.3 particles/second
+ Calculation Rate (active)         = 6681.18 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2215,19 +2215,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 3.9895e+00 seconds
-   Time in transport only          = 3.9768e+00 seconds
-   Time in inactive batches        = 1.4000e+00 seconds
-   Time in active batches          = 2.5895e+00 seconds
-   Time synchronizing fission bank = 3.5720e-03 seconds
-     Sampling source sites         = 2.9238e-03 seconds
-     SEND/RECV source sites        = 4.2671e-04 seconds
-   Time accumulating tallies       = 1.6187e-03 seconds
-   Time writing statepoints        = 4.5623e-03 seconds
- Total time for finalization       = 5.4563e-05 seconds
- Total time elapsed                = 4.4057e+00 seconds
- Calculation Rate (inactive)       = 14285.7 particles/second
- Calculation Rate (active)         = 7723.43 particles/second
+ Total time in simulation          = 4.4611e+00 seconds
+   Time in transport only          = 4.4468e+00 seconds
+   Time in inactive batches        = 1.4313e+00 seconds
+   Time in active batches          = 3.0298e+00 seconds
+   Time synchronizing fission bank = 3.8926e-03 seconds
+     Sampling source sites         = 2.8599e-03 seconds
+     SEND/RECV source sites        = 7.6022e-04 seconds
+   Time accumulating tallies       = 1.4097e-03 seconds
+   Time writing statepoints        = 5.0350e-03 seconds
+ Total time for finalization       = 3.5313e-05 seconds
+ Total time elapsed                = 4.8771e+00 seconds
+ Calculation Rate (inactive)       = 13972.8 particles/second
+ Calculation Rate (active)         = 6601.13 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2351,19 +2351,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.0262e+00 seconds
-   Time in transport only          = 4.0077e+00 seconds
-   Time in inactive batches        = 1.3962e+00 seconds
-   Time in active batches          = 2.6300e+00 seconds
-   Time synchronizing fission bank = 3.5628e-03 seconds
-     Sampling source sites         = 2.9448e-03 seconds
-     SEND/RECV source sites        = 3.8075e-04 seconds
-   Time accumulating tallies       = 6.9941e-03 seconds
-   Time writing statepoints        = 5.0103e-03 seconds
- Total time for finalization       = 3.6170e-05 seconds
- Total time elapsed                = 4.4420e+00 seconds
- Calculation Rate (inactive)       = 14325 particles/second
- Calculation Rate (active)         = 7604.45 particles/second
+ Total time in simulation          = 4.5522e+00 seconds
+   Time in transport only          = 4.5377e+00 seconds
+   Time in inactive batches        = 1.5175e+00 seconds
+   Time in active batches          = 3.0347e+00 seconds
+   Time synchronizing fission bank = 4.1957e-03 seconds
+     Sampling source sites         = 3.1653e-03 seconds
+     SEND/RECV source sites        = 6.4567e-04 seconds
+   Time accumulating tallies       = 8.7455e-04 seconds
+   Time writing statepoints        = 5.0006e-03 seconds
+ Total time for finalization       = 3.4226e-05 seconds
+ Total time elapsed                = 4.9682e+00 seconds
+ Calculation Rate (inactive)       = 13179.7 particles/second
+ Calculation Rate (active)         = 6590.46 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2487,19 +2487,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.0078e+00 seconds
-   Time in transport only          = 3.9954e+00 seconds
-   Time in inactive batches        = 1.3916e+00 seconds
-   Time in active batches          = 2.6161e+00 seconds
-   Time synchronizing fission bank = 3.6016e-03 seconds
-     Sampling source sites         = 2.9558e-03 seconds
-     SEND/RECV source sites        = 4.1517e-04 seconds
-   Time accumulating tallies       = 1.1530e-03 seconds
-   Time writing statepoints        = 4.4583e-03 seconds
- Total time for finalization       = 3.3762e-05 seconds
- Total time elapsed                = 4.4240e+00 seconds
- Calculation Rate (inactive)       = 14371.5 particles/second
- Calculation Rate (active)         = 7644.85 particles/second
+ Total time in simulation          = 4.5521e+00 seconds
+   Time in transport only          = 4.5369e+00 seconds
+   Time in inactive batches        = 1.4935e+00 seconds
+   Time in active batches          = 3.0585e+00 seconds
+   Time synchronizing fission bank = 4.5803e-03 seconds
+     Sampling source sites         = 3.1112e-03 seconds
+     SEND/RECV source sites        = 9.7827e-04 seconds
+   Time accumulating tallies       = 8.5699e-04 seconds
+   Time writing statepoints        = 5.1807e-03 seconds
+ Total time for finalization       = 3.4607e-05 seconds
+ Total time elapsed                = 4.9770e+00 seconds
+ Calculation Rate (inactive)       = 13390.9 particles/second
+ Calculation Rate (active)         = 6539.06 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2623,19 +2623,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.0810e+00 seconds
-   Time in transport only          = 4.0671e+00 seconds
-   Time in inactive batches        = 1.4016e+00 seconds
-   Time in active batches          = 2.6794e+00 seconds
-   Time synchronizing fission bank = 3.4601e-03 seconds
-     Sampling source sites         = 2.8450e-03 seconds
-     SEND/RECV source sites        = 3.7775e-04 seconds
-   Time accumulating tallies       = 2.3219e-03 seconds
-   Time writing statepoints        = 4.9696e-03 seconds
- Total time for finalization       = 3.6862e-05 seconds
- Total time elapsed                = 4.4968e+00 seconds
- Calculation Rate (inactive)       = 14269.4 particles/second
- Calculation Rate (active)         = 7464.32 particles/second
+ Total time in simulation          = 4.4898e+00 seconds
+   Time in transport only          = 4.4748e+00 seconds
+   Time in inactive batches        = 1.4308e+00 seconds
+   Time in active batches          = 3.0589e+00 seconds
+   Time synchronizing fission bank = 4.5189e-03 seconds
+     Sampling source sites         = 3.1353e-03 seconds
+     SEND/RECV source sites        = 9.6029e-04 seconds
+   Time accumulating tallies       = 1.0624e-03 seconds
+   Time writing statepoints        = 5.0718e-03 seconds
+ Total time for finalization       = 3.2207e-05 seconds
+ Total time elapsed                = 4.9066e+00 seconds
+ Calculation Rate (inactive)       = 13977.9 particles/second
+ Calculation Rate (active)         = 6538.23 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2759,19 +2759,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.3214e+00 seconds
-   Time in transport only          = 4.2357e+00 seconds
-   Time in inactive batches        = 1.4073e+00 seconds
-   Time in active batches          = 2.9142e+00 seconds
-   Time synchronizing fission bank = 3.5496e-03 seconds
-     Sampling source sites         = 2.9625e-03 seconds
-     SEND/RECV source sites        = 3.8268e-04 seconds
-   Time accumulating tallies       = 7.4504e-02 seconds
-   Time writing statepoints        = 4.8706e-03 seconds
- Total time for finalization       = 3.5301e-05 seconds
- Total time elapsed                = 4.7374e+00 seconds
- Calculation Rate (inactive)       = 14211.9 particles/second
- Calculation Rate (active)         = 6863.04 particles/second
+ Total time in simulation          = 4.5745e+00 seconds
+   Time in transport only          = 4.5587e+00 seconds
+   Time in inactive batches        = 1.4384e+00 seconds
+   Time in active batches          = 3.1361e+00 seconds
+   Time synchronizing fission bank = 4.3052e-03 seconds
+     Sampling source sites         = 3.3522e-03 seconds
+     SEND/RECV source sites        = 6.7106e-04 seconds
+   Time accumulating tallies       = 1.1858e-03 seconds
+   Time writing statepoints        = 5.9428e-03 seconds
+ Total time for finalization       = 3.8971e-05 seconds
+ Total time elapsed                = 4.9909e+00 seconds
+ Calculation Rate (inactive)       = 13904.5 particles/second
+ Calculation Rate (active)         = 6377.38 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -2895,19 +2895,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.1855e+00 seconds
-   Time in transport only          = 4.1734e+00 seconds
-   Time in inactive batches        = 1.4391e+00 seconds
-   Time in active batches          = 2.7464e+00 seconds
-   Time synchronizing fission bank = 3.4612e-03 seconds
-     Sampling source sites         = 2.8829e-03 seconds
-     SEND/RECV source sites        = 3.7469e-04 seconds
-   Time accumulating tallies       = 1.3180e-03 seconds
-   Time writing statepoints        = 4.5168e-03 seconds
- Total time for finalization       = 3.6374e-05 seconds
- Total time elapsed                = 4.6016e+00 seconds
- Calculation Rate (inactive)       = 13897.3 particles/second
- Calculation Rate (active)         = 7282.29 particles/second
+ Total time in simulation          = 4.6588e+00 seconds
+   Time in transport only          = 4.6442e+00 seconds
+   Time in inactive batches        = 1.4965e+00 seconds
+   Time in active batches          = 3.1623e+00 seconds
+   Time synchronizing fission bank = 4.5472e-03 seconds
+     Sampling source sites         = 3.3547e-03 seconds
+     SEND/RECV source sites        = 7.3522e-04 seconds
+   Time accumulating tallies       = 1.0758e-03 seconds
+   Time writing statepoints        = 4.7561e-03 seconds
+ Total time for finalization       = 3.7068e-05 seconds
+ Total time elapsed                = 5.0745e+00 seconds
+ Calculation Rate (inactive)       = 13364.6 particles/second
+ Calculation Rate (active)         = 6324.51 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -3031,19 +3031,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.2796e+00 seconds
-   Time in transport only          = 4.2581e+00 seconds
-   Time in inactive batches        = 1.4624e+00 seconds
-   Time in active batches          = 2.8172e+00 seconds
-   Time synchronizing fission bank = 3.5900e-03 seconds
-     Sampling source sites         = 2.9106e-03 seconds
-     SEND/RECV source sites        = 4.1578e-04 seconds
-   Time accumulating tallies       = 9.8483e-03 seconds
-   Time writing statepoints        = 5.0895e-03 seconds
- Total time for finalization       = 3.4418e-05 seconds
- Total time elapsed                = 4.6952e+00 seconds
- Calculation Rate (inactive)       = 13676.2 particles/second
- Calculation Rate (active)         = 7099.16 particles/second
+ Total time in simulation          = 4.7415e+00 seconds
+   Time in transport only          = 4.7270e+00 seconds
+   Time in inactive batches        = 1.4895e+00 seconds
+   Time in active batches          = 3.2520e+00 seconds
+   Time synchronizing fission bank = 3.9319e-03 seconds
+     Sampling source sites         = 2.8187e-03 seconds
+     SEND/RECV source sites        = 7.0425e-04 seconds
+   Time accumulating tallies       = 1.1673e-03 seconds
+   Time writing statepoints        = 5.3082e-03 seconds
+ Total time for finalization       = 3.6348e-05 seconds
+ Total time elapsed                = 5.1573e+00 seconds
+ Calculation Rate (inactive)       = 13427.4 particles/second
+ Calculation Rate (active)         = 6150.03 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -3167,19 +3167,19 @@
 
  Total time for initialization     = 0.0000e+00 seconds
    Reading cross sections          = 0.0000e+00 seconds
- Total time in simulation          = 4.3796e+00 seconds
-   Time in transport only          = 4.3589e+00 seconds
-   Time in inactive batches        = 1.4732e+00 seconds
-   Time in active batches          = 2.9064e+00 seconds
-   Time synchronizing fission bank = 3.4532e-03 seconds
-     Sampling source sites         = 2.8352e-03 seconds
-     SEND/RECV source sites        = 3.5599e-04 seconds
-   Time accumulating tallies       = 9.8708e-03 seconds
-   Time writing statepoints        = 4.5104e-03 seconds
- Total time for finalization       = 3.5542e-05 seconds
- Total time elapsed                = 4.7955e+00 seconds
- Calculation Rate (inactive)       = 13575.8 particles/second
- Calculation Rate (active)         = 6881.36 particles/second
+ Total time in simulation          = 4.8208e+00 seconds
+   Time in transport only          = 4.8062e+00 seconds
+   Time in inactive batches        = 1.4975e+00 seconds
+   Time in active batches          = 3.3233e+00 seconds
+   Time synchronizing fission bank = 3.9421e-03 seconds
+     Sampling source sites         = 2.9139e-03 seconds
+     SEND/RECV source sites        = 6.9096e-04 seconds
+   Time accumulating tallies       = 1.3350e-03 seconds
+   Time writing statepoints        = 5.2328e-03 seconds
+ Total time for finalization       = 4.4131e-05 seconds
+ Total time elapsed                = 5.2364e+00 seconds
+ Calculation Rate (inactive)       = 13355.8 particles/second
+ Calculation Rate (active)         = 6018.13 particles/second
 
  ============================>     RESULTS     <============================
 
@@ -3191,168 +3191,173 @@
 
  Creating state point openmc_simulation_n17.h5...
 [watts] Calling OpenMC...
-+--------------------------------+------------------------------------------+----------+----------------------------+
-| PARAMETER                      | VALUE                                    | ADDED BY | TIMESTAMP                  |
-+--------------------------------+------------------------------------------+----------+----------------------------+
-| plotting                       | No                                       | hannbn   | 2025-03-18 04:36:25.148587 |
-| cross_sections_xml_location    | /home/hannbn/projects/MARVEL_MRP/Github_ | hannbn   | 2025-03-18 04:36:25.148597 |
-|                                | repos/openmc_data/endfb-                 |          |                            |
-|                                | viii.0-hdf5/cross_sections.xml           |          |                            |
-| simplified_chain_thermal_xml   | /home/hannbn/projects/MARVEL_MRP/Github_ | hannbn   | 2025-03-18 04:36:25.148600 |
-|                                | repos/openmc_data/simplified_thermal_cha |          |                            |
-|                                | in11.xml                                 |          |                            |
-| power_MW_th                    | 20                                       | hannbn   | 2025-03-18 04:36:25.148603 |
-| thermal_efficiency             | 0.31                                     | hannbn   | 2025-03-18 04:36:25.148605 |
-| common_temperature             | 600                                      | hannbn   | 2025-03-18 04:36:25.148607 |
-| enrichment                     | 0.1975                                   | hannbn   | 2025-03-18 04:36:25.148609 |
-| H_Zr_ratio                     | 1.6                                      | hannbn   | 2025-03-18 04:36:25.148612 |
-| U_met_wo                       | 0.3                                      | hannbn   | 2025-03-18 04:36:25.148614 |
-| fuel_pin_radii                 | [0.28575, 0.3175, 1.5113, 1.5367,        | hannbn   | 2025-03-18 04:36:25.148616 |
-|                                | 1.5875]                                  |          |                            |
-| fuel_pin_materials             | ['Zr', None, 'TRIGA_fuel', None,         | hannbn   | 2025-03-18 04:36:25.148617 |
-|                                | 'SS304']                                 |          |                            |
-| fuel                           | TRIGA_fuel                               | hannbn   | 2025-03-18 04:36:25.148620 |
-| moderator_pin_radii            | [1.5367, 1.5875]                         | hannbn   | 2025-03-18 04:36:25.148623 |
-| moderator_pin_materials        | ['ZrH', 'SS304']                         | hannbn   | 2025-03-18 04:36:25.148625 |
-| pin_gap_distance               | 0.1                                      | hannbn   | 2025-03-18 04:36:25.148627 |
-| assembly_rings                 | 12                                       | hannbn   | 2025-03-18 04:36:25.148628 |
-| lattice_radius                 | 39.3                                     | hannbn   | 2025-03-18 04:36:25.148631 |
-| lattice_height                 | 78.6                                     | hannbn   | 2025-03-18 04:36:25.148633 |
-| extra_reflector                | 14                                       | hannbn   | 2025-03-18 04:36:25.148634 |
-| hex_area                       | 4012.585019999999                        | hannbn   | 2025-03-18 04:36:25.148636 |
-| core_radius                    | 53.3                                     | hannbn   | 2025-03-18 04:36:25.148638 |
-| reflector                      | BeO                                      | hannbn   | 2025-03-18 04:36:25.148639 |
-| coolant                        | NaK                                      | hannbn   | 2025-03-18 04:36:25.148642 |
-| deviation angle between drums  | 0.2243994752564138                       | hannbn   | 2025-03-18 04:36:25.148644 |
-| drum_Absorber_thickness        | 1                                        | hannbn   | 2025-03-18 04:36:25.148645 |
-| control_drum_absorber          | B4C_nat                                  | hannbn   | 2025-03-18 04:36:25.148647 |
-| control_drum_reflector         | Be                                       | hannbn   | 2025-03-18 04:36:25.148648 |
-| drum_radius_to_lattice_radius  | 0.22784810068                            | hannbn   | 2025-03-18 04:36:25.148650 |
-| Drum_Radius                    | 8.954430356724                           | hannbn   | 2025-03-18 04:36:25.148651 |
-| drum_height_to_lattice_height  | 1.24                                     | hannbn   | 2025-03-18 04:36:25.148652 |
-| drum_height                    | 97.464                                   | hannbn   | 2025-03-18 04:36:25.148654 |
-| angle_between_drums_pairs      | 60                                       | hannbn   | 2025-03-18 04:36:25.148655 |
-| drum_gap_distance              | 0.09949367063026666                      | hannbn   | 2025-03-18 04:36:25.148657 |
-| drum_tube_radius               | 9.053924027354267                        | hannbn   | 2025-03-18 04:36:25.148658 |
-| distance between control drums | 43.08872239590826                        | hannbn   | 2025-03-18 04:36:25.148660 |
-| all_drums_volume               | 294463.2163474222                        | hannbn   | 2025-03-18 04:36:25.148664 |
-| drum_absorp_all_mass           | 52.16134220445513                        | hannbn   | 2025-03-18 04:36:25.148665 |
-| drum_refl_all_mass             | 826.7680985051459                        | hannbn   | 2025-03-18 04:36:25.148666 |
-| tot_drum_area_all              | 3021.2510911456766                       | hannbn   | 2025-03-18 04:36:25.148668 |
-| burnup_steps_MWd_per_Kg        | [0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0,     | hannbn   | 2025-03-18 04:36:25.148670 |
-|                                | 15.0, 20.0, 30.0, 40.0, 50.0, 60.0,      |          |                            |
-|                                | 80.0, 100.0, 120.0, 140.0]               |          |                            |
-| reflector_mass                 | 555.2920404042476                        | hannbn   | 2025-03-18 04:36:25.148672 |
-| rings                          | [['MODERATOR', 'FUEL', 'FUEL', 'FUEL',   | hannbn   | 2025-03-18 04:36:25.148673 |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL'],    |          |                            |
-|                                | ['FUEL', 'FUEL', 'MODERATOR', 'FUEL',    |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL'], ['MODERATOR',      |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL'], ['FUEL',        |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL'],            |          |                            |
-|                                | ['MODERATOR', 'FUEL', 'FUEL', 'FUEL',    |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL',          |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL'],         |          |                            |
-|                                | ['FUEL', 'FUEL', 'MODERATOR', 'FUEL',    |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL'],            |          |                            |
-|                                | ['MODERATOR', 'FUEL', 'FUEL', 'FUEL',    |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'MODERATOR', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL',          |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'FUEL'], ['FUEL', 'FUEL',        |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL'], ['MODERATOR',      |          |                            |
-|                                | 'FUEL', 'FUEL', 'MODERATOR', 'FUEL',     |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'FUEL'], ['FUEL',   |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
-|                                | 'FUEL', 'MODERATOR', 'FUEL',             |          |                            |
-|                                | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
-|                                | 'FUEL', 'MODERATOR'], ['FUEL', 'FUEL',   |          |                            |
-|                                | 'FUEL', 'FUEL', 'FUEL', 'FUEL'],         |          |                            |
-|                                | ['MODERATOR']]                           |          |                            |
-| heat_flux                      | 0.85033996830035                         | hannbn   | 2025-03-18 04:36:25.148682 |
-| heat_flux_criteria             | 0.9                                      | hannbn   | 2025-03-18 04:36:25.148684 |
-| fuel_pin_count                 | 300                                      | hannbn   | 2025-03-18 04:36:25.148689 |
-| fuel_lifetime_days             | 2078.1733254588266                       | hannbn   | 2025-03-18 04:40:04.863050 |
-| mass_U235                      | 67711.40093224184                        | hannbn   | 2025-03-18 04:40:04.863067 |
-| mass_U238                      | 278650.8199775625                        | hannbn   | 2025-03-18 04:40:04.863070 |
-+--------------------------------+------------------------------------------+----------+----------------------------+
 Execution time: 3.7 minutes
++-----------------------------------+------------------------------------------+----------+----------------------------+
+| PARAMETER                         | VALUE                                    | ADDED BY | TIMESTAMP                  |
++-----------------------------------+------------------------------------------+----------+----------------------------+
+| plotting                          | No                                       | hannbn   | 2025-04-03 07:14:03.670519 |
+| cross_sections_xml_location       | /home/hannbn/projects/MARVEL_MRP/Github_ | hannbn   | 2025-04-03 07:14:03.670529 |
+|                                   | repos/openmc_data/endfb-                 |          |                            |
+|                                   | viii.0-hdf5/cross_sections.xml           |          |                            |
+| simplified_chain_thermal_xml      | /home/hannbn/projects/MARVEL_MRP/Github_ | hannbn   | 2025-04-03 07:14:03.670532 |
+|                                   | repos/openmc_data/simplified_thermal_cha |          |                            |
+|                                   | in11.xml                                 |          |                            |
+| power_MW_th                       | 20                                       | hannbn   | 2025-04-03 07:14:03.670534 |
+| thermal_efficiency                | 0.31                                     | hannbn   | 2025-04-03 07:14:03.670536 |
+| common_temperature                | 600                                      | hannbn   | 2025-04-03 07:14:03.670538 |
+| enrichment                        | 0.1975                                   | hannbn   | 2025-04-03 07:14:03.670540 |
+| H_Zr_ratio                        | 1.6                                      | hannbn   | 2025-04-03 07:14:03.670542 |
+| U_met_wo                          | 0.3                                      | hannbn   | 2025-04-03 07:14:03.670543 |
+| fuel_pin_radii                    | [0.28575, 0.3175, 1.5113, 1.5367,        | hannbn   | 2025-04-03 07:14:03.670545 |
+|                                   | 1.5875]                                  |          |                            |
+| fuel_pin_materials                | ['Zr', None, 'TRIGA_fuel', None,         | hannbn   | 2025-04-03 07:14:03.670547 |
+|                                   | 'SS304']                                 |          |                            |
+| fuel                              | TRIGA_fuel                               | hannbn   | 2025-04-03 07:14:03.670549 |
+| moderator_pin_radii               | [1.5367, 1.5875]                         | hannbn   | 2025-04-03 07:14:03.670552 |
+| moderator_pin_materials           | ['ZrH', 'SS304']                         | hannbn   | 2025-04-03 07:14:03.670553 |
+| pin_gap_distance                  | 0.1                                      | hannbn   | 2025-04-03 07:14:03.670555 |
+| assembly_rings                    | 12                                       | hannbn   | 2025-04-03 07:14:03.670556 |
+| lattice_radius                    | 39.3                                     | hannbn   | 2025-04-03 07:14:03.670559 |
+| lattice_height                    | 78.6                                     | hannbn   | 2025-04-03 07:14:03.670560 |
+| extra_reflector                   | 14                                       | hannbn   | 2025-04-03 07:14:03.670562 |
+| hex_area                          | 4012.585019999999                        | hannbn   | 2025-04-03 07:14:03.670564 |
+| core_radius                       | 53.3                                     | hannbn   | 2025-04-03 07:14:03.670566 |
+| reflector                         | BeO                                      | hannbn   | 2025-04-03 07:14:03.670571 |
+| coolant                           | NaK                                      | hannbn   | 2025-04-03 07:14:03.670573 |
+| deviation angle between drums     | 0.2243994752564138                       | hannbn   | 2025-04-03 07:14:03.670576 |
+| drum_Absorber_thickness           | 1                                        | hannbn   | 2025-04-03 07:14:03.670577 |
+| control_drum_absorber             | B4C_nat                                  | hannbn   | 2025-04-03 07:14:03.670579 |
+| control_drum_reflector            | Be                                       | hannbn   | 2025-04-03 07:14:03.670580 |
+| drum_radius_to_lattice_radius     | 0.22784810068                            | hannbn   | 2025-04-03 07:14:03.670582 |
+| Drum_Radius                       | 8.954430356724                           | hannbn   | 2025-04-03 07:14:03.670584 |
+| drum_height_to_lattice_height     | 1.24                                     | hannbn   | 2025-04-03 07:14:03.670585 |
+| drum_height                       | 97.464                                   | hannbn   | 2025-04-03 07:14:03.670587 |
+| angle_between_drums_pairs         | 60                                       | hannbn   | 2025-04-03 07:14:03.670588 |
+| drum_gap_distance                 | 0.09949367063026666                      | hannbn   | 2025-04-03 07:14:03.670590 |
+| drum_tube_radius                  | 9.053924027354267                        | hannbn   | 2025-04-03 07:14:03.670592 |
+| distance between control drums    | 43.08872239590826                        | hannbn   | 2025-04-03 07:14:03.670594 |
+| all_drums_volume                  | 294463.2163474222                        | hannbn   | 2025-04-03 07:14:03.670598 |
+| drum_absorp_all_mass              | 52.16134220445513                        | hannbn   | 2025-04-03 07:14:03.670599 |
+| drum_refl_all_mass                | 826.7680985051459                        | hannbn   | 2025-04-03 07:14:03.670601 |
+| tot_drum_area_all                 | 3021.2510911456766                       | hannbn   | 2025-04-03 07:14:03.670602 |
+| burnup_steps_MWd_per_Kg           | [0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0,     | hannbn   | 2025-04-03 07:14:03.670605 |
+|                                   | 15.0, 20.0, 30.0, 40.0, 50.0, 60.0,      |          |                            |
+|                                   | 80.0, 100.0, 120.0, 140.0]               |          |                            |
+| reflector_mass                    | 555.2920404042476                        | hannbn   | 2025-04-03 07:14:03.670607 |
+| rings                             | [['MODERATOR', 'FUEL', 'FUEL', 'FUEL',   | hannbn   | 2025-04-03 07:14:03.670609 |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL'],    |          |                            |
+|                                   | ['FUEL', 'FUEL', 'MODERATOR', 'FUEL',    |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL'], ['MODERATOR',      |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL'], ['FUEL',        |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL'],            |          |                            |
+|                                   | ['MODERATOR', 'FUEL', 'FUEL', 'FUEL',    |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL',          |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL', 'FUEL',  |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL'],         |          |                            |
+|                                   | ['FUEL', 'FUEL', 'MODERATOR', 'FUEL',    |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL'],            |          |                            |
+|                                   | ['MODERATOR', 'FUEL', 'FUEL', 'FUEL',    |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'MODERATOR', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'MODERATOR',     |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL',          |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'FUEL'], ['FUEL', 'FUEL',        |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL'], ['MODERATOR',      |          |                            |
+|                                   | 'FUEL', 'FUEL', 'MODERATOR', 'FUEL',     |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL', 'FUEL',     |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'FUEL'], ['FUEL',   |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
+|                                   | 'FUEL', 'MODERATOR', 'FUEL',             |          |                            |
+|                                   | 'MODERATOR', 'FUEL', 'MODERATOR',        |          |                            |
+|                                   | 'FUEL', 'MODERATOR'], ['FUEL', 'FUEL',   |          |                            |
+|                                   | 'FUEL', 'FUEL', 'FUEL', 'FUEL'],         |          |                            |
+|                                   | ['MODERATOR']]                           |          |                            |
+| heat_flux                         | 0.85033996830035                         | hannbn   | 2025-04-03 07:14:03.670617 |
+| heat_flux_criteria                | 0.9                                      | hannbn   | 2025-04-03 07:14:03.670620 |
+| fuel_pin_count                    | 300                                      | hannbn   | 2025-04-03 07:14:03.670626 |
+| num_people_required_per_refueling | 5                                        | hannbn   | 2025-04-03 07:14:03.670627 |
+| levelization_period_years         | 60                                       | hannbn   | 2025-04-03 07:14:03.670628 |
+| refueling_period_days             | 15                                       | hannbn   | 2025-04-03 07:14:03.670630 |
+| FTE_Cost                          | 170000                                   | hannbn   | 2025-04-03 07:14:03.670631 |
+| fuel_lifetime_days                | 2078.1733254588266                       | hannbn   | 2025-04-03 07:17:44.322620 |
+| mass_U235                         | 67711.40093224184                        | hannbn   | 2025-04-03 07:17:44.322637 |
+| mass_U238                         | 278650.8199775625                        | hannbn   | 2025-04-03 07:17:44.322640 |
+| people_by_days_refueling          | 12.5                                     | hannbn   | 2025-04-03 07:17:44.371559 |
++-----------------------------------+------------------------------------------+----------+----------------------------+
