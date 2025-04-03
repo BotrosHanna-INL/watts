@@ -63,7 +63,6 @@ def extra_design_specs(enrichment, core_radius, Fuel_Mass_kg, U_mass, fuel_lifet
     B4C_shield_mass =   B4C_shield_vol  * 2.52 / 1000
     
     WEP_shield_vol = 3.14 * (((WEP_shield_thickness + vessels_tot_radius)**2) -  vessels_tot_radius**2 ) * vessel_tot_height
-    
     WEP_shield_mass = (WEP_shield_vol  * 1.1 /2)/1000 # divide by 2 because it is not fully WEP (Kg)  
     
     return refueling_cost_per_year , Capacity_factor , startup_cost_per_year_after_emergency_shutdown, startup_cost_per_year_after_refuel,\
@@ -79,7 +78,6 @@ def extra_design_specs(enrichment, core_radius, Fuel_Mass_kg, U_mass, fuel_lifet
 
 
 def ellipsoid_shell(a, b, c):
-
     return 4*np.pi*np.power(((a*b)**1.6 + (a*c)**1.6 + (b*c)**1.6)/3, 1/1.6)
 
 # Vessel Calcs
@@ -103,7 +101,8 @@ def vessel_calcs (core_radius_including_reflector , lattice_height, boron_carbid
     guard_vessel_thickness = 0.5
     guard_vessel_radius = vessel_radius + vessel_thickness + gap_vessel
     guard_bottom_depth = bottom_depth + vessel_thickness + gap_vessel
-    guard_vessel_volume = (ellipsoid_shell(guard_vessel_radius, guard_vessel_radius, guard_bottom_depth)/2)*guard_vessel_thickness + (circle_area(guard_vessel_radius + guard_vessel_thickness) - circle_area(guard_vessel_radius))*vessel_height
+    guard_vessel_volume = (ellipsoid_shell(guard_vessel_radius, guard_vessel_radius, guard_bottom_depth)/2)*\
+        guard_vessel_thickness + (circle_area(guard_vessel_radius + guard_vessel_thickness) - circle_area(guard_vessel_radius))*vessel_height
     guard_vessel_mass_kg = guard_vessel_volume * 8/1000
 
     # cooling vessel
