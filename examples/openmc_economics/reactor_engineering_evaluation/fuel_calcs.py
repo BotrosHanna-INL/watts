@@ -13,11 +13,5 @@ def fuel_calculations(params):
 
     kg_SWU = (U_mass*f_val_fun+tail_waste*tail_waste_val_fun- nat_u_consum *nat_u_waste_val_fun)
     
-    if  0 <params['enrichment'] < 0.1:
-        premium = 1
-        print(f"HALEU premium is {premium}")
-        
-    if 0.1<= params['enrichment'] <=   0.2:
-        premium = 1.15 
-        return nat_u_consum , tail_waste , kg_SWU
+    return nat_u_consum , tail_waste , kg_SWU
  

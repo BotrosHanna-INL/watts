@@ -2,13 +2,15 @@
 This example demonstrates how to use WATTS to perform
 OpenMC calculation.
 """
+import pandas as pd 
 
 # Importing libraries and modules
 import time
 import numpy as np
 import watts
 import openmc
-import openmc.deplete
+from tabulate import tabulate
+
 from core_design.openmc_template import build_openmc_model
 from core_design.utils import calculate_lattice_radius, calculate_reflector_mass,\
     calculate_heat_flux, openmc_depletion, calculate_drum_volume
@@ -17,6 +19,7 @@ from reactor_engineering_evaluation.operation import reactor_operation
 from reactor_engineering_evaluation.fuel_calcs import fuel_calculations
 from reactor_engineering_evaluation.vessels_calcs import vessels_specs
 from core_design.pins_arrangement import rings_1
+from cost.cost_scaling import cost_estimate
 
 import warnings
 
@@ -35,6 +38,7 @@ params['cross_sections_xml_location'] =\
 params['simplified_chain_thermal_xml'] =\
     '/home/hannbn/projects/MARVEL_MRP/Github_repos/openmc_data/simplified_thermal_chain11.xml'
 
+params['reactor type'] = "LTMR"
 params['power_MW_th'] = 20
 params['thermal_efficiency'] = 0.31
 
@@ -142,7 +146,14 @@ params['duration_to_startup_after_shutdown_days'] = 14
 params['reactors_monitored_by_one_person'] = 5 
 params['FTEs_for_security_staff'] = 5 
 
+# preconstruction cost params
+#McDowell, B., and D. Goodman. "Advanced Nuclear Reactor Plant Parameter Envelope and
+#Guidance." National Reactor Innovation Center (NRIC), NRIC-21-ENG-0001 (2021). 
+params['land_area_acres'] = 18 # acres
 
+
+# Financing params
+params['interest_rate'] = 0.06 # 
 
 
 
@@ -182,7 +193,7 @@ params['mass_U238'] = 278650.8  # grams
 
 
 
-def design_evaluations(params):
+def design_and_cost_evaluations(params):
     # run_openmc(params)
     params['people_by_days_refueling_per_year'], params['people_by_days_startup_per_year'],\
         params['capacity_factor'] = reactor_operation(params)
@@ -202,13 +213,28 @@ def design_evaluations(params):
 
     params['out_of_vessel_shielding_mass'] = params['out_vessel_shield_effective_density_factor'] * cylinder_annulus_mass(params['out_of_vessel_shield_thickness']+ params['vessels_total_radius'],\
         params['out_of_vessel_shield_thickness'], params['vessels_total_height'], params['out_vessel_shield_material']) 
-
-    params.show_summary(show_metadata=True, sort_by='time')
+    detailed_cost = cost_estimate(pd.read_excel('GNCOA.xlsx'), params)
+    return detailed_cost
+    
+    
+# params.show_summary(show_metadata=True, sort_by='time')
 
 
 # Main execution flow
 if __name__ == "__main__":
-    design_evaluations(params)
+    coa_table = design_and_cost_evaluations(params)[0]
+    cap_cost, ann_cost, ann_cost_levelized, lcoe1 = design_and_cost_evaluations(params)[1:]
+    
+    print(cap_cost, ann_cost, ann_cost_levelized, lcoe1)
+    # html_string = styler._repr_html_()
+    # print(html_string)
+    print(tabulate(coa_table)) #, headers='keys', tablefmt='pretty'))
+
+
+
+    #     # Save to an Excel file
+    # with pd.ExcelWriter('styled_dataframe.xlsx', engine='openpyxl') as writer:
+    #     styler.to_excel(writer, sheet_name='Sheet1',index=False)
     
 
 
